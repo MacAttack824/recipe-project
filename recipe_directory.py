@@ -1,30 +1,22 @@
 # Here lies the recipe lists as a dictionary
 
-#dataclass = __init__Recipe(self, 
+class Recipe: 
+	def __init__(self, name, id, basic_ing, ingredients, cook_time, steps, suggested_sides, tags):
+		self.name = name
+		self.id = id
+		self.basic_ing = basic_ing
+		self.ingredients = ingredients
+		self.cook_time = cook_time
+		self.steps = steps
+		self.suggested_sides = suggested_sides
+		self.tags = tags
+			
+recipe_1 = Recipe('tacos', 1, ['oil', 'salt', 'pepper', 'hot sauce', 'sour cream', 'taco seasoning'], ['protein', 'tortillas', 'tomatoes', 'lettuce', 'corn'], '25 minutes', 'JUST COOK IT', ['rice', 'beans', 'guacamole', 'chips', 'salsa'], 'easy skill')
 
-recipe_file = dict(
-	{{'name': 'tacos'},
-	{'ID' : 1},
-	{'basic_ingredients': ['oil', 'salt', 'pepper', 'hot sauce', 'sour cream', 'taco seasoning']},
-	{'ingredients': ['protein', 'tortillas', 'tomatoes', 'lettuce', 'corn']},
-	{'cook time': '25 minutes'},
-	{'steps' : 'JUST COOK IT'},
-	{'skill' : 'easy skill required'},
-    {'suggested sides': ['rice', 'beans', 'guacamole', 'chips', 'salsa', ]}
-	}
-    
-	{{'name': 'pancakes'},
-	{'ID' : 2},
-	{'basic_ingredients': ['oil, butter, milk, eggs']},
-    {'ingredents': ['pancake mix']},
-    {'cook time': '20 minutes'},
-    {'steps' : ['measure amount of pancake mix and mix well in a bowl', 'Add some oil to the pan and dollop a fist sized amount to start the pancake',
-              'once you see bubbles popping, it should be ready to flip to cook the other']},
-    {'skill' : 'medium skill required'},
-    {'suggestedsides': ['bacon', 'eggs', 'sausage', 'fruit', 'yogurt', 'biscuits']}
-	}
-)
+recipe_2 = Recipe('pancakes', 2, ['oil, butter, milk, eggs'], ['pancake mix'], '20 minutes', ['measure amount of pancake mix and mix well in a bowl', 'Add some oil to the pan and dollop a fist sized amount to start the pancake',
+'once you see bubbles popping, it should be ready to flip to cook the other'], ['bacon', 'eggs', 'sausage', 'fruit', 'yogurt', 'biscuits'], 'medium skill')
 
+print(recipe_1.__dict__)
+print(recipe_2.__dict__) 
+	
 
-for recipe in recipe_file:
-    print(recipe['name'])
