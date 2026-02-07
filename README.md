@@ -11,4 +11,7 @@ Once recipes are chosen, the recipe data can be retrieved to display the followi
 - Ingredients to buy with quantities
 - Basic ingredients normally found in a kitchen
 - Step by Step Instructions
-- Alternatively, it can pull the scanned PDF image that can be printed with all this information on it already
+- Alternatively, it can pull the scanned PDF image that can be printed with all this information on it
+- Skill level for meal
+- Time to cook
+- Sides suggestions
