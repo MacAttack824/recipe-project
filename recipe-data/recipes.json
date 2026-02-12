@@ -1,0 +1,58 @@
+{
+  "recipes": [
+    {
+      "name": "name",
+      "basic_ingredients": [
+        "thing",
+        "stuff"
+      ],
+      "ingredients": [
+        "thing",
+        "stuff",
+        "other stuff"
+      ],
+      "cook_time": 123,
+      "steps": [
+        "step1",
+        "step2",
+        "step3"
+      ]
+    },
+    {
+      "name": "name",
+      "basic_ingredients": [
+        "thing",
+        "stuff"
+      ],
+      "ingredients": [
+        "thing",
+        "stuff",
+        "other stuff"
+      ],
+      "cook_time": 123,
+      "steps": [
+        "step1",
+        "step2",
+        "step3"
+      ]
+    },
+    {
+      "name": "name",
+      "basic_ingredients": [
+        "thing",
+        "stuff"
+      ],
+      "ingredients": [
+        "thing",
+        "stuff",
+        "other stuff"
+      ],
+      "cook_time": 123,
+      "steps": [
+        "step1",
+        "step2",
+        "step3"
+      ]
+    },
+  ]
+}
