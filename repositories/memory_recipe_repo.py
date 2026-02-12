@@ -6,6 +6,7 @@ class MemoryRecipeRepo:
     recipes: list[Recipe] = []
 
     def get_all(self):
+        print([recipe.name for recipe in self.recipes])
         return self.recipes
 
     def get(self, recipe_id: UUID):
@@ -23,6 +24,7 @@ class MemoryRecipeRepo:
 
     def add(self, recipe: Recipe):
         self.recipes.append(recipe)
+        print(f'added recipe {recipe.name}')
 
     def remove(self, recipe_id: UUID):
         recipe_found = None
