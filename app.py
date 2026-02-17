@@ -14,7 +14,19 @@ def click_add_recipe(name:str):
 
 if __name__ == '__main__':
 
-    for i in range(10):
+    for i in range(2):
         click_add_recipe(standalone_mode=False)
 
     recipe_manager.repository.get_all()
+
+@click.command()
+@click.option('--basic_ingredients', prompt='Enter Basic Ingredients (comma separated):')
+def click_add_basic_ingredients(basic_ingredients:list):
+    recipe_manager.add_basic_ingredients(basic_ingredients=basic_ingredients.split(','))
+
+    for i in range(2):
+        click_add_basic_ingredients(standalone_mode=False)
+
+    recipe_manager.repository.get_all()
+
+    
