@@ -1,5 +1,5 @@
 from recipe_directory import Recipe
-from uuid import UUID 
+from uuid import UUID
 
 
 class MemoryRecipeRepo:
@@ -9,7 +9,7 @@ class MemoryRecipeRepo:
         print([recipe.name for recipe in self.recipes])
         return self.recipes
 
-    def get(self, recipe_id: UUID):
+    def get(self, recipe_id: UUID): 
         
         recipe_found = None
         index_found = None
@@ -48,3 +48,8 @@ class MemoryRecipeRepo:
             raise KeyError('Recipe not found, check your ID')
         self.recipes[index_found] = recipe
 
+def meal_plan():
+    days = 0
+    ## random generator to select meals for the and print them 
+    
+    return meal_plan
