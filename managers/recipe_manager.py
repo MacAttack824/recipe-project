@@ -21,4 +21,3 @@ class RecipeManager:
         print(f'adding recipe named {name}') 
         recipe = Recipe(name=name, basic_ingredients=basic_ingredients, ingredients=ingredients, cook_time=cook_time, steps=steps)
         self.repository.add(recipe=recipe)
-

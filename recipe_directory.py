@@ -1,5 +1,15 @@
 from typing import Optional
 from uuid import uuid1
+from elements_of_recipe import add_cook_time, add_steps
+
+def print_out(recipes):
+    print('************************')
+    print(Recipe.name for recipe in recipes)
+    print(f'This recipe takes about {add_cook_time} minutes to cook')
+    print(f'This recipe has {len(add_steps)} steps')
+    print('************************')
+
+
 
 class Recipe:
     def __init__(self, name: str, basic_ingredients: list[str], ingredients: list[str], cook_time: int, steps: list[str], suggested_sides: Optional[list[str]] = None, tags: Optional[list[str]] = None):
@@ -15,10 +25,4 @@ class Recipe:
     def nametags(self):
         return '{} {}'.format(self.name, self.tags)
 
-    def print_out(self):
-        print('************************')
-        print(Recipe.name for recipe in self.recipes)
-        print(f'This recipe takes about {cook_time} minutes to cook')
-        print(f'This recipe has {len(steps)} steps')
-        print('************************')
 
