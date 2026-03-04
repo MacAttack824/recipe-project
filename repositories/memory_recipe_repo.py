@@ -47,9 +47,3 @@ class MemoryRecipeRepo:
         if not recipe_found or not index_found:
             raise KeyError('Recipe not found, check your ID')
         self.recipes[index_found] = recipe
-
-def meal_plan():
-    days = 0
-    ## random generator to select meals for the and print them 
-    
-    return meal_plan
