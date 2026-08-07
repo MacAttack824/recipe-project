@@ -1,6 +1,6 @@
+import sys
 from managers.recipe_manager import RecipeManager
 from repositories.memory_recipe_repo import MemoryRecipeRepo
-
 
 repo = MemoryRecipeRepo()
 recipe_manager = RecipeManager(repository=repo)
@@ -9,13 +9,13 @@ recipe_manager = RecipeManager(repository=repo)
 def welcome_prompt():
     print("Welcome to the Recipe Manager!")
     print(
-        "You can Meal Plan, add recipes, view recipes, edit recipes, and delete recipes."
+        "You can Meal Plan, add recipes, view recipes and saved recipes, edit recipes, and delete recipes."
     )
     print(
         "*******************************************************************************"
     )
     desire = input(
-        "What would you like to do today? Type a number for meals to plan or Type ADD, EDIT, or DELETE: "
+        "What would you like to do today? Type a number for meals to plan or Type VIEW, ADD, EDIT, or DELETE: "
     )
 
     if desire.lower() == "add":
@@ -25,11 +25,15 @@ def welcome_prompt():
 
     elif desire.lower() == "edit":
         print("Ok! Let's edit a recipe!")
-        # MemoryRecipeRepo.edit()
+        MemoryRecipeRepo.edit()
 
     elif desire.lower() == "delete":
         print("Was it bad!? Let's delete a recipe!")
-        # MemoryRecipeRepo.remove()
+        MemoryRecipeRepo.remove()
+
+    elif desire.lower() == "view":
+        print("Let's see what recipes we have already!")
+        MemoryRecipeRepo.get_all()
 
     elif (
         desire == "1"
@@ -47,5 +51,6 @@ def welcome_prompt():
 
     elif desire.lower() == "exit":
         print("Goodbye!")
+        sys.exit()
     else:
         print("I didn't understand that. Please try again.")
