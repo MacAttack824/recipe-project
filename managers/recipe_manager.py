@@ -1,10 +1,11 @@
 from recipe_directory import Recipe
-from repositories.memory_recipe_repo import MemoryRecipeRepo
+
+# from repositories.memory_recipe_repo import MemoryRecipeRepo
 import elements_of_recipe
 
 
 class RecipeManager:
-    def __init__(self, repository: MemoryRecipeRepo):
+    def __init__(self, repository):
         self.repository = repository
 
     def add_recipe(self, name: str):
@@ -25,3 +26,38 @@ class RecipeManager:
             steps=steps,
         )
         self.repository.add(recipe=recipe)
+
+    def view_recipes(self):
+        recipes = self.repository.get_all()
+
+        if not recipes:
+            print("No recipes found.")
+            return
+
+        print("\n***************************")
+        print("       SAVED RECIPES      ")
+        print("***************************")
+
+        for recipe in recipes:
+            print(
+                f"{recipe['id']}: "
+                f"{recipe['recipe_name'].title()} "
+                f"- {recipe['cook_time']} minutes"
+            )
+
+        print("***************************\n")
+
+    def delete_recipe(self, recipe_id):
+        deleted = self.repository.delete_recipe(recipe_id)
+
+        if deleted:
+            recipe = deleted[0]
+            name = recipe["recipe_name"].title()
+
+            print("\n************************")
+            print("      RECIPE DELETED")
+            print("************************")
+            print(f"Recipe #{recipe_id}: {name} has been removed.")
+            print("************************\n")
+        else:
+            print(f"\nRecipe #{recipe_id} was not found.\n")

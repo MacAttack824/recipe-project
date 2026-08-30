@@ -1,8 +1,10 @@
 import sys
 from managers.recipe_manager import RecipeManager
-from repositories.memory_recipe_repo import MemoryRecipeRepo
 
-repo = MemoryRecipeRepo()
+# from repositories.memory_recipe_repo import MemoryRecipeRepo
+from repositories.supabase_recipe_repo import SupabaseRecipeRepo
+
+repo = SupabaseRecipeRepo()
 recipe_manager = RecipeManager(repository=repo)
 
 
@@ -25,15 +27,20 @@ def welcome_prompt():
 
     elif desire.lower() == "edit":
         print("Ok! Let's edit a recipe!")
-        MemoryRecipeRepo.edit()
+        repo.edit()
 
     elif desire.lower() == "delete":
         print("Was it bad!? Let's delete a recipe!")
-        MemoryRecipeRepo.remove()
+
+        recipe_manager.view_recipes()
+
+        recipe_id = int(input("Enter the ID of the recipe you want to delete: "))
+        recipe_manager.delete_recipe(recipe_id=recipe_id)
 
     elif desire.lower() == "view":
         print("Let's see what recipes we have already!")
-        MemoryRecipeRepo.get_all()
+        repo.get_all()
+        recipe_manager.view_recipes()
 
     elif (
         desire == "1"
