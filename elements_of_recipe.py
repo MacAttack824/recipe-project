@@ -1,20 +1,20 @@
-def add_basic_ingredient():
-    basic_ingredients = []
-    print("now adding basic ingredients...")
+def add_pantry_ingredient():
+    pantry_ingredients = []
+    print("now adding pantry ingredients...")
     while True:
-        new_basic_ingredient = input(
-            "What basic kitchen ingredients are needed? Type done to finish: "
+        new_pantry_ingredient = input(
+            "What pantry ingredients are needed? Type done to finish: "
         )
-        if new_basic_ingredient == "done" or new_basic_ingredient == "":
+        if new_pantry_ingredient == "done" or new_pantry_ingredient == "":
             break
         else:
-            basic_ingredients.append(new_basic_ingredient)
-    filtered_basic_ingredients = [
-        item for item in basic_ingredients if item not in ("")
+            pantry_ingredients.append(new_pantry_ingredient)
+    filtered_pantry_ingredients = [
+        item for item in pantry_ingredients if item not in ("")
     ]
-    basic_ingredients = filtered_basic_ingredients
-    print("...finished adding basic ingredients")
-    return basic_ingredients
+    pantry_ingredients = filtered_pantry_ingredients
+    print("...finished adding pantry ingredients")
+    return pantry_ingredients
 
 
 def add_ingredient():
@@ -22,7 +22,7 @@ def add_ingredient():
     print("adding ingredients...")
     while True:
         new_ingredient = input(
-            "What grocery ingredients do you need to purchase? Type done to finish: "
+            "What fresh ingredients do you need to purchase? Type done to finish: "
         )
         if new_ingredient == "done" or new_ingredient == "":
             break

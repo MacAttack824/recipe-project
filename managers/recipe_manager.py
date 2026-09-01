@@ -11,7 +11,7 @@ class RecipeManager:
     def add_recipe(self, name: str):
 
         ingredients = elements_of_recipe.add_ingredient()
-        basic_ingredients = elements_of_recipe.add_basic_ingredient()
+        pantry_ingredients = elements_of_recipe.add_pantry_ingredient()
         cook_time = elements_of_recipe.add_cook_time()
         steps = elements_of_recipe.add_steps()
         # sides = add_sides()
@@ -20,12 +20,12 @@ class RecipeManager:
         print(f"adding recipe named {name}")
         recipe = Recipe(
             name=name,
-            basic_ingredients=basic_ingredients,
+            pantry_ingredients=pantry_ingredients,
             ingredients=ingredients,
             cook_time=cook_time,
             steps=steps,
         )
-        self.repository.add(recipe=recipe)
+        self.repository.add_recipe(recipe=recipe)
 
     def view_recipes(self):
         recipes = self.repository.get_all()

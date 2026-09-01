@@ -1,5 +1,6 @@
 from typing import Optional
-from uuid import uuid4
+
+# from uuid import uuid4
 from elements_of_recipe import add_cook_time, add_steps
 import random
 
@@ -16,21 +17,21 @@ class Recipe:
     def __init__(
         self,
         name: str,
-        basic_ingredients: list[str],
+        pantry_ingredients: list[str],
         ingredients: list[str],
         cook_time: int,
         steps: list[str],
-        suggested_sides: Optional[list[str]] = None,
-        tags: Optional[list[str]] = None,
+        # suggested_sides: Optional[list[str]] = None,
+        # tags: Optional[list[str]] = None,
     ):
         self.name = name
-        self.id = uuid4()
-        self.basic_ingredients = basic_ingredients
+        # self.id = uuid4()
+        self.pantry_ingredients = pantry_ingredients
         self.ingredients = ingredients
         self.cook_time = cook_time
         self.steps = steps
-        self.suggested_sides = suggested_sides
-        self.tags = tags
+        # self.suggested_sides = suggested_sides
+        # self.tags = tags
 
     def nametags(self):
         return "{} {}".format(self.name, self.tags)
