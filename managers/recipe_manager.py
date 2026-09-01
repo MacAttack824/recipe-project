@@ -14,6 +14,7 @@ class RecipeManager:
         pantry_ingredients = elements_of_recipe.add_pantry_ingredient()
         cook_time = elements_of_recipe.add_cook_time()
         steps = elements_of_recipe.add_steps()
+        cuisine_style = elements_of_recipe.add_cuisine_style()
         # sides = add_sides()
         # tags = add_tags()
 
@@ -24,6 +25,7 @@ class RecipeManager:
             ingredients=ingredients,
             cook_time=cook_time,
             steps=steps,
+            cuisine_style=cuisine_style,
         )
         self.repository.add_recipe(recipe=recipe)
 

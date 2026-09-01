@@ -24,6 +24,7 @@ class SupabaseRecipeRepo:
                     #                   "ingredients": recipe.ingredients,
                     "cook_time": recipe.cook_time,
                     #                   "steps": recipe.steps,
+                    "cuisine_style": recipe.cuisine_style,
                 }
             )
             .execute()

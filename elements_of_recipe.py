@@ -88,3 +88,10 @@ def add_steps():
 #     tags = filtered_tags
 #     print('...finished adding tags')
 #     return tags
+
+
+def add_cuisine_style():
+    cuisine_style = input(
+        "What kind of meal is this? (Italian, Mexican, American, etc.): "
+    )
+    return cuisine_style

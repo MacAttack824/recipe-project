@@ -21,6 +21,7 @@ class Recipe:
         ingredients: list[str],
         cook_time: int,
         steps: list[str],
+        cuisine_style: str,
         # suggested_sides: Optional[list[str]] = None,
         # tags: Optional[list[str]] = None,
     ):
@@ -32,6 +33,7 @@ class Recipe:
         self.steps = steps
         # self.suggested_sides = suggested_sides
         # self.tags = tags
+        self.cuisine_style = cuisine_style
 
     def nametags(self):
         return "{} {}".format(self.name, self.tags)
