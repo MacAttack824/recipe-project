@@ -1,18 +1,19 @@
 recipe
   -recipe_id PK    int8
   -recipe_name     text
-  -cook_time       int8
-  -servings        int8
+  -cook_time       int4
+  -servings        int2
   -cuisine_style   text
-  -source_recipe_number (OPT) int8
+  -source_recipe_number (OPT) text
   -subtitle (OPT)  text
+  -recipe_type     text
  
 ingredients
   -ingredient_id PK int8
   -ingredient_name  text
   -ingredient_type  text
 
-j-table(recipe_ingredients)
+recipe_ingredients
   -recipe_ingredient_id PK int8
   -ingredient_id	FK       int8
   -recipe_id		FK         int8
@@ -20,14 +21,18 @@ j-table(recipe_ingredients)
   -measurement_unit        text
   -preparation_note (OPT)  text
 
-cooking_steps
+steps
   -step_id	PK      int8
   -recipe_id	FK    int8
-  -step_number      int8
+  -step_number      int2
   -step_title       text
   -instructions     text
 
-tag
-  -recipe_id	PK     int8
-  -tag_id	FK         int8
+tags
+  -tag_id	PK         int8
   -tag_name          text
+
+recipe_tag
+  -recipe_tag_id    int8
+  -recipe_id        int8
+  -tag_id           int8
