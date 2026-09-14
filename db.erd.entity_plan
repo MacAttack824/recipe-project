@@ -1,0 +1,38 @@
+recipe
+  -recipe_id
+  -call # (opt)
+  -cook_time
+  -cuisine_style
+  -recipe_name
+
+ 
+
+ingredients
+  -fresh or pantry
+  -ingredient_id
+  -ingredient
+
+
+j-table(recipe_ingredients)
+  -row_id
+  -ingredient_id
+  -recipe_id
+  -recipe_measurement_id
+
+
+ing_measurement
+  -row_id
+  -measurement type
+  -measurement quantity
+
+
+j-table(recipe_measurements)
+  -ingredient_id
+  -ing_measurement
+
+
+cooking_steps
+  -step_id
+  -recipe_id
+  -step_number
+  -instructions
