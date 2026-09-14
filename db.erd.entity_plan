@@ -1,4 +1,4 @@
-recipe
+recipes
   -recipe_id PK    int8
   -recipe_name     text
   -cook_time       int4
