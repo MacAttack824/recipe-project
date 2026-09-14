@@ -33,6 +33,6 @@ tags
   -tag_name          text
 
 recipe_tag
-  -recipe_tag_id    int8
-  -recipe_id        int8
+  -recipe_tag_id  FK  int8
+  -recipe_id   FK     int8
   -tag_id           int8
