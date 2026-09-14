@@ -32,7 +32,7 @@ tags
   -tag_id	PK         int8
   -tag_name          text
 
-recipe_tag
+recipe_tags
   -recipe_tag_id  FK  int8
   -recipe_id   FK     int8
   -tag_id           int8
