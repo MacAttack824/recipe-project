@@ -7,7 +7,11 @@ recipes
   -source_recipe_number (OPT) text
   -subtitle (OPT)  text
   -recipe_type     text
- 
+
+recipe_sides
+  -main_recipe_id  FK	int8
+  -side_recipe_id  FK	int8
+
 ingredients
   -ingredient_id PK int8
   -ingredient_name  text
