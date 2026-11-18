@@ -61,33 +61,36 @@ def add_steps():
     return steps
 
 
-# def add_sides():
-#     sides = []
-#     print('Creating a list of sides...')
-#     while True:
-#         new_side = input('Add sides to go with the main dish. Type done to finish: ')
-#         if new_side == 'done' or new_side == '':
-#             break
-#         else:
-#             sides.append(new_side)
-#     filtered_sides = [item for item in sides if item not in ("")]
-#     sides = filtered_sides
-#     print('...finished adding sides')
-#     return sides
+def add_sides():
+    sides = []
+    print("Creating a list of sides...")
+    while True:
+        new_side = input("Add sides to go with the main dish. Type done to finish: ")
+        if new_side == "done" or new_side == "":
+            break
+        else:
+            sides.append(new_side)
+    filtered_sides = [item for item in sides if item not in ("")]
+    sides = filtered_sides
+    print("...finished adding sides")
+    return sides
 
-# def add_tags():
-#     tags = []
-#     print('Creating a list of tags...')
-#     while True:
-#         new_tag = input('Add tags that recipes can be filtered by. Type done to finish: ')
-#         if new_tag == 'done' or new_tag == '':
-#             break
-#         else:
-#             tags.append(new_tag)
-#     filtered_tags = [item for item in tags if item not in ('')]
-#     tags = filtered_tags
-#     print('...finished adding tags')
-#     return tags
+
+def add_tags():
+    tags = []
+    print("Creating a list of tags...")
+    while True:
+        new_tag = input(
+            "Add tags that recipes can be filtered by. Type done to finish: "
+        )
+        if new_tag == "done" or new_tag == "":
+            break
+        else:
+            tags.append(new_tag)
+    filtered_tags = [item for item in tags if item not in ("")]
+    tags = filtered_tags
+    print("...finished adding tags")
+    return tags
 
 
 def add_cuisine_style():

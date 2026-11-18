@@ -2,6 +2,7 @@ from recipe_directory import Recipe
 
 # from repositories.memory_recipe_repo import MemoryRecipeRepo
 import elements_of_recipe
+import recipe_directory
 
 
 class RecipeManager:
@@ -15,8 +16,8 @@ class RecipeManager:
         cook_time = elements_of_recipe.add_cook_time()
         steps = elements_of_recipe.add_steps()
         cuisine_style = elements_of_recipe.add_cuisine_style()
-        # sides = add_sides()
-        # tags = add_tags()
+        sides = elements_of_recipe.add_sides()
+        tags = elements_of_recipe.add_tags()
 
         print(f"adding recipe named {name}")
         recipe = Recipe(
@@ -26,6 +27,8 @@ class RecipeManager:
             cook_time=cook_time,
             steps=steps,
             cuisine_style=cuisine_style,
+            sides=sides,
+            tags=tags,
         )
         self.repository.add_recipe(recipe=recipe)
 
